@@ -3,7 +3,8 @@ package com.example.gianlucanadirvillalba.englishwords;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity
     private List mKeys = new ArrayList<>();
     private List mValues = new ArrayList<>();
     private Map<String, String> map = new LinkedHashMap<>();
-    private List fromDb = new ArrayList<>();
+    private List mWords = new ArrayList<>();
     private Random random = new Random();
     private TextView mKeyText;
     private TextView mValueText;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     private FirebaseDatabase firebaseDatabase;
     private int count = 0;
     private View mProgressBar;
+    private int mDbSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity
         mProgressBar = findViewById(R.id.loadingPanel);
         //readFile();
         readFromDB();
+        //addElementToDB();
         //addToDB();
     }
 
@@ -57,28 +60,20 @@ public class MainActivity extends AppCompatActivity
      */
     private void readFromDB()
     {
-        DatabaseReference ref = firebaseDatabase.getReferenceFromUrl("https://myenglishwordsdb.firebaseio.com/");
+        final DatabaseReference ref = firebaseDatabase.getReferenceFromUrl("https://myenglishwordsdb.firebaseio.com/");
         ref.addValueEventListener(new ValueEventListener()
         {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
-                fromDb = (List) dataSnapshot.getValue();
-                for (int i = 0; i < fromDb.size(); i++)
+                mDbSize = ((List) dataSnapshot.getValue()).size();
+                //Log.d("Log", "DB size: "+((List) dataSnapshot.getValue()).size());
+                for (DataSnapshot d : dataSnapshot.getChildren())
                 {
-                    String removeEnglish = "\\s*\\benglish=\\b\\s*";
-                    String removeItalian = "\\s*\\bitalian=\\b\\s*";
-                    String data = fromDb.get(i).toString();
-                    String s = data.substring(1, data.length() - 1);
-                    String[] array = s.split(", ");
-                    array[0] = array[0].replaceAll(removeEnglish, "");
-                    array[1] = array[1].replaceAll(removeItalian, "");
-                    mKeys.add(array[0]);
-                    mValues.add(array[1]);
-                    Log.d("Log", "kv: " + mKeys.get(i) + ", " + mValues.get(i));
+                    mWords.add(d.child("english").getValue() +" - "+d.child("italian").getValue());
+                    mKeys.add(d.child("english").getValue());
+                    mValues.add(d.child("italian").getValue());
                 }
-
-                //quando ho tutti i dati negli arraylist allora nascondo la progress bar e mostro la UI
                 randomNumber = random.nextInt(mKeys.size());
                 mProgressBar.setVisibility(View.GONE);
                 setUI();
@@ -93,17 +88,25 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    private void addElementToDB()
+    {
+        firebaseDatabase.getReferenceFromUrl("https://myenglishwordsdb.firebaseio.com/" +mDbSize+ "/english")
+                .setValue("prova");
+    }
+
     /**
      * Aggiungo i dati nel db
      */
     private void addToDB()
     {
+        //rimuovo tutti gli elementi dal db se presenti
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.removeValue();
+
         for (String key : map.keySet())
         {
-            Log.d("log", "toDB:" + map.get(key).substring(1, map.get(key).length()));
-
-            //TODO devo rimuovere lo spazio finale
-            firebaseDatabase.getReferenceFromUrl("https://myenglishwordsdb.firebaseio.com/" + count + "/english").setValue(key);
+            firebaseDatabase.getReferenceFromUrl("https://myenglishwordsdb.firebaseio.com/" + count + "/english")
+                    .setValue(key.substring(0, key.length() - 1)); //rimuovo lo spazio finale
             firebaseDatabase.getReferenceFromUrl("https://myenglishwordsdb.firebaseio.com/" + count + "/italian")
                     .setValue(map.get(key).substring(1, map.get(key).length())); //rimuovo lo spazio iniziale
             count++;
@@ -128,7 +131,6 @@ public class MainActivity extends AppCompatActivity
                 if (line != null && line.length() != 0)
                 {
                     String[] columns = line.split("-");
-                    //Log.d("Log", columns[0] +", "+columns[1]);
                     map.put(columns[0], columns[1]);
                     mKeys.add(columns[0]);
                     mValues.add(columns[1]);
@@ -153,6 +155,7 @@ public class MainActivity extends AppCompatActivity
         mKeyText.setText(mKeys.get(randomNumber).toString());
         mValueText.setVisibility(View.INVISIBLE);
 
+
         mNextButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -170,8 +173,17 @@ public class MainActivity extends AppCompatActivity
                     mKeyText.setText(mKeys.get(randomNumber).toString());
                     tap = false;
                 }
+                //addElementToDB();
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
     }
 }

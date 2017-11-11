@@ -13,10 +13,10 @@ indeed/as a matter of fact - infatti
 almost - quasi
 likewise - lo stesso per me
 by the way - a proposito
-in light of - alla luce di (in light of what happened)
+in light of - alla luce di
 though - però
 as though - come se
-although/even though/despite - nonostante/anche se
+although/even though - nonostante/anche se
 further/furthermore - ulteriormente/più lontano
 every now - ogni tanto
 rather - piuttosto
@@ -31,7 +31,7 @@ perhaps - forse
 nearly - quasi
 afterwards - in seguito
 thick - spesso
-as usual - come sempre (non as always) 
+as usual - come sempre
 after a while - dopo un pò
 whatever - qualunque cosa
 suddenly - improvvisamente
@@ -88,8 +88,8 @@ figure out - capire/risolvere
 find out - scoprire
 chill out - rilassarsi
 freak out - dare di matto
-feel like + vrb ing - avere voglia di
-look forward to + vrb ing - non vedere l'ora di fare qualcosa
+feel like - sentirsi come/avere voglia di
+look forward to - non vedere l'ora di
 in favor of - a favore di
 hurry up - sbrigati
 dud - fallimento/"sòla"
@@ -97,11 +97,11 @@ badass - cazzuto
 weird/weirdo - tipo strano
 it works like a charm - lavora da meraviglia
 dork - stupido
-gotcha (got it) - ti ho beccato/capito
+gotcha - ti ho beccato
 bud/buddy/cuz - amico
 dude - tipo/tizio
 mate - compagno/socio
-nap/snooze - sonnellino (I took a nap)
+nap/snooze - sonnellino
 wonder - chissà/chiedersi
 earn - guadagnare
 argue - discutere
@@ -114,23 +114,23 @@ mind - dispiacersi
 geez/blimey/crikey - omg/caspita/accidenti
 run by - gestito da
 cheers - grazie/arrivederci/evviva
-fancy - costoso/voglio (I fancy a drink/do you fancy a drink?)
+fancy - costoso/voglio
 spot on - accurata/precisa
 you crack me up - mi hai fatto ridere
-dire/awful - (daya) estremo serio/terribile (that's dire)
-top up - ricaricare (soldi sulla carte o telefono ad esempio)
+dire/awful - estremo serio/terribile
+top up - ricaricare
 slip off - togliersi/sfilarsi
 cheer up - forza!/su di morale!
 duffer - incapace
-watch it! - attento (attento a quello che dici!)
+watch it! - attento
 crap - schifezza
 deal - affare
 stuff - cose
-no way! - nemmeno per sogno/impossibile/non ci credo
+no way! - impossibile/non ci credo
 no matter what - non importa cosa
 spot - posto/punto
-lift - passaggio con la macchina (give me a lift)
-rubbish - spazzatura (don't talk rubbish - non dire stupidaggini)
+lift - passaggio con la macchina
+rubbish - spazzatura
 barking - fuori di testa
 hang on - aspettare/attendere
 dare - osare
@@ -152,15 +152,15 @@ disappoint - deludere
 complain/groan/moan - lamentarsi/protestare
 deserve - meritarsi
 tears - lacrime
-chill - freddo
+chill - freddo/calmo
 borrow - prendere in prestito
 lend - prestare
-outfit - completo (vestito)
+outfit - vestito
 locker - armadietto
 days off - giorni liberi
 go off - andare via
 overslept - dormire troppo
-fave (favourite) - preferito
+fave/favourite - preferito
 lack - mancanza
 purpose - scopo 
 agreement - accordo
@@ -171,15 +171,15 @@ masterpiece - capolavoro
 chase - inseguire/cacciare
 take care - prendersi cura
 begging - supplicare
-sick - male (I feel sick)/vomitare
+sick - male/vomitare
 reach - raggiungere
-reach out - mettersi in comunicazione (thanks for reaching out to us)
+reach out to - mettersi in comunicazione con
 dwell - risiedere
 content - contenuto/soddisfatto
 shied away - allontanarsi
 accomplished/master - esperto
 master - maestro/padroneggiare
-might - forza/potere(may)
+might - forza/potere
 beefy - muscoloso
 bear - sopportare
 shudder/tremble/gasp/quiver/shiver - tremare
@@ -227,7 +227,7 @@ blanket - coperta
 bent - piegato
 duck - piegarsi
 gingerly - con attenzione
-tidy - ordinato (in ordine)
+tidy - ordinato/in ordine
 holding up - sostenere
 fateful - grave/disastroso
 rap - bussare
@@ -288,7 +288,7 @@ warmth - calore umano
 heat - calore
 wizard/sorcerer - stregone
 fear/dread - paura
-lame - poco convincente/debole (una battuta ad esempio)
+lame - poco convincente/debole
 vent - sfogarsi
 tight - stretto
 loud - rumoroso
@@ -299,7 +299,7 @@ rush - di corsa
 surrounding - circostanza
 attentive - attento
 properly - correttamente
-charge - accusa/essere responsabile (in charge of)
+charge - accusa/essere responsabile
 downward - verso il basso
 railway - ferrovia
 whistle - fischiare
@@ -332,7 +332,7 @@ affect - influisce/riguardano
 praise - elogiare 
 pollution - inquinamento
 narrow - stretto/restringere
-loose - largo/lento (pantaloni)
+loose - largo/lento
 reliable - affidabile
 succeed - trionfare
 harm - fare del male
@@ -351,7 +351,7 @@ shattering - sconvolgente/distruzione
 wounded - ferito
 injury - ferita
 facility - struttura/capacità
-hire - assumere(lavoro)
+hire - assumere
 fine - multa
 envy - invidia
 own - possedere/proprio
@@ -373,7 +373,7 @@ catch up with sb - raggiungere qualcuno
 carry out - mettere in pratica/compiere
 give in to sb - arrendersi a qualcuno
 put off - rimandare
-go by - passare (tempo e movimento)
+go by - passare
 easy going - tipo alla mano
 carry off - sequestrare/rapire
 hand in - presentare/consegnare
@@ -412,7 +412,7 @@ quite - abbastanza
 look up to - ammirare
 awkward - arduo/difficile
 not really - non proprio
-there you are - eccoti (ti ho trovato)
+there you are - eccoti
 here is your sth - ecco il tuo qualcosa
 here you are - ecco a te
 tell - notare
@@ -452,4 +452,4 @@ guest - ospite
 host - padrone di casa/ospitare
 at will - a piacere
 copy that - ricevuto
-
+fire - licenziare

@@ -10,10 +10,10 @@
         android:id="@+id/key_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="120dp"
         android:gravity="center_horizontal"
         android:text="Key"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:visibility="gone"/>
 
     <TextView
@@ -23,20 +23,20 @@
         android:layout_marginTop="40dp"
         android:gravity="center_horizontal"
         android:text="Value"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:visibility="gone"/>
 
     <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/loadingPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:gravity="center">
 
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminate="true" />
+            android:indeterminate="true"/>
     </RelativeLayout>
 
 
@@ -54,12 +54,9 @@
             android:paddingBottom="30dp"
             android:paddingTop="30dp"
             android:text="next"
-            android:visibility="gone"
-            />
+            android:visibility="gone"/>
 
     </RelativeLayout>
-
-
 
 
 </LinearLayout>
