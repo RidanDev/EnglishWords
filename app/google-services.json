@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "802646867240",
+    "firebase_url": "https://myenglishwordsdb.firebaseio.com",
+    "project_id": "myenglishwordsdb",
+    "storage_bucket": "myenglishwordsdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802646867240:android:65ec4b3e0c45a991",
+        "android_client_info": {
+          "package_name": "com.example.gianlucanadirvillalba.englishwords"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802646867240-6nour2614sbpoqe2ruu3vgg02i7dlica.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gianlucanadirvillalba.englishwords",
+            "certificate_hash": "b6c7ad8e0c1bbc25ac56b5d1e29f302e47b412d0"
+          }
+        },
+        {
+          "client_id": "802646867240-i986kln994j8dj1bmd2ed9k81h1l3p93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbDP3tGlfOoetR5WrlJy0_SYdelv0MpdQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802646867240-i986kln994j8dj1bmd2ed9k81h1l3p93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
