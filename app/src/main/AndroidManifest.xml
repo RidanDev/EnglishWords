@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".ListActivity">
         </activity>
+        <activity android:name=".NewWord">
+        </activity>
     </application>
 
 </manifest>

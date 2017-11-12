@@ -199,6 +199,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.list_word:
                 Intent intent = new Intent(this, ListActivity.class);
                 intent.putStringArrayListExtra("array", mWords);
+                intent.putExtra("size", mDbSize);
                 startActivity(intent);
                 return true;
             default:
