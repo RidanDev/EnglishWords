@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!--TODO keytest althought/shudder etc troppo lunghe sparisce button-->
     <TextView
         android:id="@+id/key_text"
         android:layout_width="match_parent"
@@ -13,6 +12,7 @@
         android:layout_marginTop="120dp"
         android:gravity="center_horizontal"
         android:text="Key"
+        android:textColor="@color/colorBlack"
         android:textSize="25dp"
         android:visibility="gone"/>
 
@@ -23,6 +23,7 @@
         android:layout_marginTop="40dp"
         android:gravity="center_horizontal"
         android:text="Value"
+        android:textColor="@color/colorBlack"
         android:textSize="25dp"
         android:visibility="gone"/>
 

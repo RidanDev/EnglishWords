@@ -1,10 +1,12 @@
 package com.example.gianlucanadirvillalba.englishwords;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity
     private List mKeys = new ArrayList<>();
     private List mValues = new ArrayList<>();
     private Map<String, String> map = new LinkedHashMap<>();
-    private List mWords = new ArrayList<>();
+    private ArrayList mWords = new ArrayList<>();
     private Random random = new Random();
     private TextView mKeyText;
     private TextView mValueText;
@@ -70,9 +72,9 @@ public class MainActivity extends AppCompatActivity
                 //Log.d("Log", "DB size: "+((List) dataSnapshot.getValue()).size());
                 for (DataSnapshot d : dataSnapshot.getChildren())
                 {
-                    mWords.add(d.child("english").getValue() +" - "+d.child("italian").getValue());
-                    mKeys.add(d.child("english").getValue());
-                    mValues.add(d.child("italian").getValue());
+                    mWords.add(d.child("english").getValue() + " - " + d.child("italian").getValue());
+                    mKeys.add(d.child("english").getValue()); //solo per file locale
+                    mValues.add(d.child("italian").getValue()); //solo per file locale
                 }
                 randomNumber = random.nextInt(mKeys.size());
                 mProgressBar.setVisibility(View.GONE);
@@ -88,14 +90,17 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    /**
+     * Aggiungo una singola parola in coda nel db
+     */
     private void addElementToDB()
     {
-        firebaseDatabase.getReferenceFromUrl("https://myenglishwordsdb.firebaseio.com/" +mDbSize+ "/english")
+        firebaseDatabase.getReferenceFromUrl("https://myenglishwordsdb.firebaseio.com/" + mDbSize + "/english")
                 .setValue("prova");
     }
 
     /**
-     * Aggiungo i dati nel db
+     * Aggiungo tutti i dati dal file locale nel db (non lo utilizzo)
      */
     private void addToDB()
     {
@@ -114,7 +119,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Leggo il txt locale con le parole (non mi serve)
+     * Leggo il txt locale con le parole (non lo utilizzo)
      */
     private void readFile()
     {
@@ -173,7 +178,6 @@ public class MainActivity extends AppCompatActivity
                     mKeyText.setText(mKeys.get(randomNumber).toString());
                     tap = false;
                 }
-                //addElementToDB();
             }
         });
 
@@ -185,5 +189,20 @@ public class MainActivity extends AppCompatActivity
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.list_word:
+                Intent intent = new Intent(this, ListActivity.class);
+                intent.putStringArrayListExtra("array", mWords);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

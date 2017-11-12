@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/english_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="English word"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/italian_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Italian word"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp"/>
+
+        <include
+            layout="@layout/horizontal_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
