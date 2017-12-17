@@ -46,8 +46,11 @@ public class NewWord extends AppCompatActivity
                         .setValue(mEditItalian.getText().toString());
 
                 Toast.makeText(MyApplication.getAppContext(),"Added word: "+ mEditEnglish.getText() +" - "+mEditItalian.getText(),
-                        Toast.LENGTH_SHORT).show();
-                mDbSize++; //TODO mancano tutti i controlli per aggiungere correttamente un elemento in coda alla lista nel db
+                        Toast.LENGTH_LONG).show();
+                mDbSize++;//TODO mancano tutti i controlli per aggiungere correttamente un elemento in coda alla lista nel db
+
+                mEditEnglish.setText("");
+                mEditItalian.setText("");
             }
         });
     }

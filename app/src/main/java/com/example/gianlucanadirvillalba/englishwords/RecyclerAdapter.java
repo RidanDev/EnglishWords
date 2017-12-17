@@ -17,6 +17,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.WordsH
     private LayoutInflater mLayoutInflater = LayoutInflater.from(MyApplication.getAppContext());
     private ArrayList<String> mData = new ArrayList<>();
 
+    public ArrayList<String> getmData()
+    {
+        return mData;
+    }
+
     public RecyclerAdapter(ArrayList<String> data)
     {
         mData = data;
@@ -55,5 +60,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.WordsH
             englishView = (TextView) itemView.findViewById(R.id.english_word);
             italianView = (TextView) itemView.findViewById(R.id.italian_word);
         }
+    }
+
+    public void setFilter(ArrayList<String> newList)
+    {
+        mData = new ArrayList<>();
+        mData.addAll(newList);
+        notifyDataSetChanged();
     }
 }
